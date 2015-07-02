@@ -39,7 +39,7 @@
   <fieldset>
     <legend>Output Options:</legend>
     <div>
-      Image Width (pixels):<br /><input id="outwidth" pattern="[0-9]{5}" type="number" min="1" max="32768" value="2048" />
+      Image Width (pixels):<br /><input id="outwidth" pattern="[0-9]{5}" type="number" min="1" max="32768" value="0" />
       <button id="calculate" title="Frame rate times the length of the video">&larr; Calculate from Frame Rate</button>
       <input id="fps" type="number" max="120" pattern="[0-9]{3}" value="29" /> FPS
     </div>
@@ -50,7 +50,7 @@
   </fieldset>
 
   <fieldset>
-    Estimated data size: <span id="sizeLabel"></span> MB<br />
+    Estimated data size: <span id="sizeLabel">0.0</span> MB<br />
     <button id="start">Start Recording</button>
   </fieldset>
 </div>
