@@ -36,8 +36,7 @@ window.onload = function() {
   calculate.onclick = function(e) {
     // calculate output image width from frame rate
     if (fps.value) {
-      outwidth.value = Math.ceil((parseInt(endtime.value) - parseInt(starttime.value)) * parseFloat(fps.value));
-      outwidth.onchange();
+      calculateWidth();
     } else {
       alert('Please enter the frame rate (FPS) of the video!');
     }
@@ -110,6 +109,7 @@ window.onload = function() {
     endtime.value = video.duration;
     starttime.value = 0;
     column = 0;
+    calculateWidth();
     updateGizmo();
     updateSize();
   };
@@ -150,6 +150,11 @@ window.onload = function() {
     // handle window resizing
     updateGizmo();
   };
+
+  function calculateWidth() {
+    outwidth.value = Math.ceil((parseInt(endtime.value) - parseInt(starttime.value)) * parseFloat(fps.value));
+    outwidth.onchange();
+  }
 
   function saveFrames() {
     var link = document.createElement("a");
